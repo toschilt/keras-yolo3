@@ -169,9 +169,19 @@ class YOLO(object):
     def close_session(self):
         self.sess.close()
 
+#def detect_video(yolo, video_path, output_path=""):
+#    import cv2
+#    vid = cv2.VideoCapture(video_path)
+#    if not vid.isOpened():
+
 def detect_video(yolo, video_path, output_path=""):
     import cv2
-    vid = cv2.VideoCapture(video_path)
+    import os
+    #VIDEO_NAME = 'VIDEONAME.flv'
+    # Grab path to current working directory
+    #CWD_PATH = os.getcwd()
+    #PATH_TO_VIDEO = os.path.join(CWD_PATH,VIDEO_NAME)
+    vid = cv2.VideoCapture(0)
     if not vid.isOpened():
         raise IOError("Couldn't open webcam or video")
     video_FourCC    = int(vid.get(cv2.CAP_PROP_FOURCC))

@@ -1,3 +1,5 @@
+VOCdevkit
+
 *.jpg
 *.png
 *.weights
